@@ -1,0 +1,15 @@
+<p onclick="changeColor(this)">Components don’t need a root element, y’all.</p>
+<style webc:scoped>
+    p {
+        color:blue;
+    }
+</style>
+<script webc:nokeep>
+    function changeColor(t) {
+        if(t.style.backgroundColor == "lightgrey") {
+            t.style.backgroundColor = "lightgreen"
+        } else {
+            t.style.backgroundColor = "lightgrey"
+        }
+    }
+</script>

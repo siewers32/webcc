@@ -1,0 +1,8 @@
+---
+layout: page.webc
+---
+
+<h1>Hello World</h1>
+<another-component>Blaberdie</another-component>
+<my-component></my-component>
+<shadow-root>Hello</shadow-root>

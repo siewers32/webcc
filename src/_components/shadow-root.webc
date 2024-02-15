@@ -1,0 +1,31 @@
+<menu-toggle>
+    <template shadowrootmode="open">
+      <button>
+        <slot></slot>
+      </button>
+    </template>
+    Open Menu
+</menu-toggle>
+  <script>
+    class MenuToggle extends HTMLElement {
+      constructor() {
+        super();
+  
+        // Detect whether we have SSR content already:
+        if (this.shadowRoot) {
+          // A Declarative Shadow Root exists!
+          // wire up event listeners, references, etc.:
+          const button = this.shadowRoot.firstElementChild;
+          button.addEventListener('click', toggle);
+        } else {
+          // A Declarative Shadow Root doesn't exist.
+          // Create a new shadow root and populate it:
+          const shadow = this.attachShadow({mode: 'open'});
+          shadow.innerHTML = `<button><slot></slot></button>`;
+          shadow.firstChild.addEventListener('click', toggle);
+        }
+      }
+    }
+  
+    customElements.define('menu-toggle', MenuToggle);
+  </script>

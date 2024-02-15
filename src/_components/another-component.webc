@@ -1,0 +1,16 @@
+
+<p onclick="changeColor(this)">From another component</p>
+<style webc:scoped>
+    p {
+        color:red;
+    }
+</style>
+<script>
+    function changeColor(t) {
+        if(t.style.backgroundColor == "purple") {
+            t.style.backgroundColor = "yellow"
+        } else {
+            t.style.backgroundColor = "purple"
+        }
+    }
+</script>
